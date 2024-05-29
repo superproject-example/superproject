@@ -1,0 +1,17 @@
+Run `tox -e update-zuul-config` to update the zuul config for
+submodules according to the contents of .gitmodules.
+
+This assumes that all submodules and superprojects share the same
+branch (but this is supported for multiple branches).  For example, if
+the superproject has branches "main" and "dev", then it is expected
+that the .gitmodules file references the "main" branch (or the current
+branch, ".") for every submodule included.  And the "dev" branch of
+the superproject references only "dev" branches of submodules.
+
+If this assumption does not hold, a slightly more complex/verbose
+configuration is needed.
+
+This assumes a change to Zuul to permit this superproject module to
+configure jobs on subprojects.  An example of the proposed syntax for
+the corresponding tenant configuration file is in the zuul-config
+repo.
