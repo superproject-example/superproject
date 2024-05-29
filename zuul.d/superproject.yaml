@@ -1,0 +1,26 @@
+- job:
+    name: superproject-specific-job
+    description: |
+      This job should only run on changes to the superproject.
+
+- job:
+    name: integration-test-job
+    description: |
+      This job should run on every change to the superproject or any
+      submodule project.
+
+- project-template:
+    name: submodule-jobs
+    description: |
+      A collection of jobs that should run on any change to
+      submodules.
+    check:
+      jobs:
+        - integration-test-job
+
+# We want to run the superproject job here, and also the integration test job
+- project:
+    templates: submodule-jobs
+    check:
+      jobs:
+        - superproject-specific-job

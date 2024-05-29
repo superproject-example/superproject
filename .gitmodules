@@ -1,0 +1,9 @@
+[submodule "submodule1"]
+	path = submodule1
+	url = ../submodule1
+[submodule "submodule2"]
+	path = submodule2
+	url = ../submodule2
+[submodule "submodule3"]
+	path = submodule3
+	url = ../submodule3

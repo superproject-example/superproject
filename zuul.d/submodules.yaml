@@ -1,0 +1,12 @@
+- project:
+    name: submodule1
+    templates:
+    - submodule-jobs
+- project:
+    name: submodule2
+    templates:
+    - submodule-jobs
+- project:
+    name: submodule3
+    templates:
+    - submodule-jobs
